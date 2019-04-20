@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Inquiry</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<meta charset="utf-8">
+</head>
+<body onbeforeunload="return leavingAlert()">
+	<div id="container">
+		<div id="nav">
+		  <a href="index.html">Home</a>
+		  <a href="history.html">History</a>
+		  <a href="blog.html">Blog</a>
+		  <a href="inquiry.html">About</a>
+		  <a class="active" href="inquiry.html">Inquiry</a>
+
+		  	  <!-- <a id="logo" href="//en.wikipedia.org/wiki/File:UEFA_Champions_League_logo_2.svg" title="Fair use of copyrighted material in the context of UEFA Champions League"> -->
+		  	<img alt="UEFA Champions League logo 2.svg" 
+		  		src="https://upload.wikimedia.org/wikipedia/en/thumb/b/bf/UEFA_Champions_League_logo_2.svg/220px-UEFA_Champions_League_logo_2.svg.png">
+	  <!-- </a> -->
+
+		</div>
+
+		<form method="post"
+			action="http://webdevbasics.net/scripts/demo.php"
+			onsubmit="return validateForm();">
+			<label for="userName">Name: </label>
+			<input type="text" name="userName" id="userName">
+			<label for="userAge">Age: </label>
+			<input type="text" name="userAge" id="userAge">
+			<input type="submit" value="Send information" id="submit">
+		</form>
+	</div>
+</body>
+
+<footer>
+	<span>
+		<small>Or follow me on Insta: <a href="https://www.instagram.com/mohammza_/" target="_blank">@_mohammza</a></small>
+	</span>
+</footer>
+
+<!-- <script type="text/javascript">
+	alert("This is Home page");
+
+	window.onbeforeunload = confirmExit;
+  	function confirmExit()
+  	{
+   		 return "Do you want to leave this page without saving?";
+  	}
+</script> -->
+<script>
+	function validateForm() {
+		if (document.forms[0].userName.value == "") {
+ 			alert("Name field cannot be empty.");
+			return false;
+		} // end if
+		if (document.forms[0].userAge.value < 18) {
+ 			alert ("Age is less than 18. You are not an adult.");
+ 			return false;
+		} // end if
+		alert ("Age is valid.");
+		return true;
+	} // end function validateForm
+</script>
